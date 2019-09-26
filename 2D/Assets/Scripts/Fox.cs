@@ -11,5 +11,15 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
         // API 把訊息輸出到 Unity
         Debug.Log("哈囉，沃德~@3@");
         Debug.Log("!!!!!!!!");
+        // Log(object message) API 說明書
+        // object 指任何類型，例如：777，1.5f，"嗨~"，true/false
+        // message 指說明這裡要放什麼，這裡指的是訊息
+        Debug.Log(777);
+        Debug.Log(true);
+        Debug.Log(1.5f);
+        // 警告訊息
+        Debug.LogWarning("警告訊息");
+        // 錯誤訊息
+        Debug.LogError("錯誤訊息");
     }
 }
