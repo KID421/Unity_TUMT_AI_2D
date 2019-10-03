@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 625815873}
   - component: {fileID: 625815872}
   - component: {fileID: 625815871}
+  - component: {fileID: 625815874}
   m_Layer: 0
   m_Name: "\u9752\u86D9"
   m_TagString: Untagged
@@ -282,6 +283,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625815874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625815870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575368e2e6d1a4c40b843da44e84d1bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sayStart: "\u55E8\uFF0C\u4F60\u597D\uFF0C\u6211\u53EF\u4EE5\u8ACB\u4F60\u5E6B\u6211\u8490\u96C6\u5341\u9846\u6AFB\u6843\u55CE\uFF1F"
+  sayNotComplete: "\u4F60\u9084\u6C92\u627E\u5230\u5341\u9846\u6AFB\u6843\u5594..."
+  sayComplete: "\u611F\u8B1D\u4F60\u5E6B\u6211\u627E\u5230\u5341\u9846\u6AFB\u6843~"
+  speed: 1.5
+  complete: 0
+  countPlayer: 0
+  countFinish: 10
 --- !u!1 &700439835
 GameObject:
   m_ObjectHideFlags: 0
