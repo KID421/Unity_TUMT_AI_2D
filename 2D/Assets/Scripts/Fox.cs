@@ -21,6 +21,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
 
     private void Update()
     {
+        Debug.Log(Input.GetAxis("Horizontal"));
         r2d.AddForce(new Vector2(speed, 0));
     }
 }
