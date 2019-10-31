@@ -35,6 +35,11 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
         Jump();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("碰到東西：" + collision.gameObject);
+    }
+
     /// <summary>
     /// 走路
     /// </summary>
@@ -48,7 +53,8 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     /// </summary>
     private void Jump()
     {
-        r2d.AddForce(new Vector2(0, jump * Input.GetAxis("Jump")));
+        if (Input.GetKeyDown(KeyCode.Space))
+            r2d.AddForce(new Vector2(0, jump));
     }
 
 
