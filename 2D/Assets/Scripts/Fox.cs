@@ -24,8 +24,8 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     // 更新事件：每秒執行約 60 次
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D)) TurnRight();
-        if (Input.GetKeyDown(KeyCode.A)) TurnLeft();
+        if (Input.GetKeyDown(KeyCode.D)) Turn(0);
+        if (Input.GetKeyDown(KeyCode.A)) Turn(180);
     }
 
     // 固定更新事件：每禎 0.002 秒
@@ -41,19 +41,14 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     {
         r2d.AddForce(new Vector2(speed * Input.GetAxis("Horizontal"), 0));
     }
-    /// <summary>
-    /// 右轉
-    /// </summary>
-    private void TurnRight()
-    {
-        transform.eulerAngles = new Vector3(0, 0, 0);
-    }
-    /// <summary>
-    /// 左轉
-    /// </summary>
-    private void TurnLeft()
-    {
-        transform.eulerAngles = new Vector3(0, 180, 0);
-    }
 
+    // 參數語法：類型 名稱
+    /// <summary>
+    /// 轉彎
+    /// </summary>
+    /// <param name="direction">方向，左轉為 180，右轉為 0</param>
+    private void Turn(int direction)
+    {
+        transform.eulerAngles = new Vector3(0, direction, 0);
+    }
 }
