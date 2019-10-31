@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 80
-  jump: 300
+  jump: 1000
   foxName: "\u72D0\u72F8"
   pass: 0
 --- !u!1 &1685565214

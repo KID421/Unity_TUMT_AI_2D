@@ -8,6 +8,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     public float jump = 2.5f;               // 浮點數
     public string foxName = "狐狸";         // 字串
     public bool pass = false;               // 布林值 - true/false
+    public bool isGround;
 
     private Rigidbody2D r2d;
     //private Transform tra;
@@ -37,6 +38,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        isGround = true;
         Debug.Log("碰到東西：" + collision.gameObject);
     }
 
@@ -53,8 +55,11 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     /// </summary>
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)
+        {
+            isGround = false;
             r2d.AddForce(new Vector2(0, jump));
+        }
     }
 
 
