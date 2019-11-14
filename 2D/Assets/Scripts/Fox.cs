@@ -47,7 +47,8 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     /// </summary>
     private void Walk()
     {
-        r2d.AddForce(new Vector2(speed * Input.GetAxis("Horizontal"), 0));
+        if (r2d.velocity.magnitude < 10 && isGround)
+            r2d.AddForce(new Vector2(speed * Input.GetAxisRaw("Horizontal"), 0));
     }
 
     /// <summary>
