@@ -427,13 +427,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  sayStart: "\u55E8\uFF0C\u4F60\u597D\uFF0C\u6211\u53EF\u4EE5\u8ACB\u4F60\u5E6B\u6211\u8490\u96C6\u5341\u9846\u6AFB\u6843\u55CE\uFF1F"
+  sayStart: "\u55E8\uFF0C\u7D66\u6211\u8490\u96C6\u5341\u9846\u6AFB\u6843!!!!!"
   sayNotComplete: "\u4F60\u9084\u6C92\u627E\u5230\u5341\u9846\u6AFB\u6843\u5594..."
   sayComplete: "\u611F\u8B1D\u4F60\u5E6B\u6211\u627E\u5230\u5341\u9846\u6AFB\u6843~"
-  speed: 0.01
+  speed: 1.5
   complete: 0
   countPlayer: 0
   countFinish: 10
+  objCanvas: {fileID: 1220780974}
   textSay: {fileID: 1469189561}
 --- !u!61 &625815875
 BoxCollider2D:
@@ -955,12 +956,12 @@ GameObject:
   - component: {fileID: 1220780976}
   - component: {fileID: 1220780975}
   m_Layer: 5
-  m_Name: "\u5C0D\u8A71"
+  m_Name: "\u9752\u86D9\u5C0D\u8A71"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1220780975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,7 +1036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.32, y: -1.04}
+  m_AnchoredPosition: {x: 0.3, y: -0.5}
   m_SizeDelta: {x: 500, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1262997412
@@ -1182,7 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  jump: 1000
+  jump: 1200
   foxName: "\u72D0\u72F8"
   pass: 0
   isGround: 0
@@ -1253,7 +1254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6E2C\u8A66\u6587\u5B57"
+  m_Text: 
 --- !u!222 &1469189562
 CanvasRenderer:
   m_ObjectHideFlags: 0

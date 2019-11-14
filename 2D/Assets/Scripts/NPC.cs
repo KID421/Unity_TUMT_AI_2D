@@ -24,5 +24,20 @@ public class NPC : MonoBehaviour
     public bool complete;
     public int countPlayer;
     public int countFinish = 10;
+    [Header("介面")]
+    public GameObject objCanvas;
     public Text textSay;
+
+    // 2D 觸發事件
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // 如果碰到物件為"狐狸"
+        if (collision.name == "狐狸")
+        {
+            // 畫布.顯示
+            objCanvas.SetActive(true);
+            // 文字介面.文字 = 對話1
+            textSay.text = sayStart;
+        }
+    }
 }
