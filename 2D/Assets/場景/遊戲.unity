@@ -985,6 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: "\u7D05\u8272"
+  _season: 1
 --- !u!1 &1220780974
 GameObject:
   m_ObjectHideFlags: 0
