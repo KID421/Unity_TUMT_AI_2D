@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;   // 引用 介面 API
 
-public class NPC : MonoBehaviour
+public class Npc : MonoBehaviour
 {
     #region 欄位
     // 定義列舉
