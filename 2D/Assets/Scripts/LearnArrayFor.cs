@@ -22,5 +22,15 @@ public class LearnArrayFor : MonoBehaviour
         scores[2] = 60;
         // 取得陣列
         print(scores[2]);
+
+        for (int i = 1; i <= 10; i++)
+        {
+            print("數字：" + i);
+        }
+
+        for (int i = 0; i < scores.Length; i++)
+        {
+            print("分數陣列：" + scores[i]);
+        }
     }
 }
