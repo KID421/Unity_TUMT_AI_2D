@@ -980,7 +980,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974707410}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bbdb3d7a72abd04981ccfbdc1ea6941, type: 3}
   m_Name: 
@@ -999,6 +999,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   say: "\u55E8\uFF0C\u4F60\u597D\u55CE?"
+  values:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  scores: 64000000500000005a0000001e00000028000000
+  colors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1220780974
 GameObject:
   m_ObjectHideFlags: 0

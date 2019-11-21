@@ -57,9 +57,7 @@ public class Npc : MonoBehaviour
         switch (_state)
         {
             case state.normal:
-                //textSay.text = sayStart;            // 開始對話
-                StopAllCoroutines();
-                StartCoroutine(PrintSay(sayStart));
+                textSay.text = sayStart;            // 開始對話
                 break;
             case state.notComplete:
                 textSay.text = sayNotComplete;      // 未完成對話
@@ -67,17 +65,6 @@ public class Npc : MonoBehaviour
             case state.complete:
                 textSay.text = sayComplete;         // 完成對話
                 break;
-        }
-    }
-
-    private IEnumerator PrintSay(string text)
-    {
-        textSay.text = "";
-
-        for (int i = 0; i < text.Length; i++)
-        {
-            textSay.text += text[i];
-            yield return new WaitForSeconds(0.1f);
         }
     }
 

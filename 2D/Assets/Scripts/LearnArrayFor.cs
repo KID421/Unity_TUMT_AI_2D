@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;   // 引用 系統.集合 API
 
 public class LearnArrayFor : MonoBehaviour
 {
@@ -25,12 +26,25 @@ public class LearnArrayFor : MonoBehaviour
 
         for (int i = 1; i <= 10; i++)
         {
-            print("數字：" + i);
+            //print("數字：" + i);
         }
 
         for (int i = 0; i < scores.Length; i++)
         {
-            print("分數陣列：" + scores[i]);
+            //print("分數陣列：" + scores[i]);
         }
+
+        StartCoroutine(Test()); // 啟動協程
+    }
+
+    // 協同程序
+    private IEnumerator Test()
+    {
+        print("開始!");
+        yield return new WaitForSeconds(1);
+        print("<color=red>一秒後~</color>");
+        yield return new WaitForSeconds(2);
+        print("<color=red>兩秒後~</color>");
+
     }
 }
