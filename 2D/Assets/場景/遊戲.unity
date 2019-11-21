@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72b5685856eef744be1cc7ed695f681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  say: "\u55E8\uFF0C\u4F60\u597D\u55CE?"
+  say: "\u55E8\uFF0C\u4F60\u597D\u55CE\uFF1F"
   values:
   - 0
   - 0
@@ -1128,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1262997413
 Animator:
   serializedVersion: 3
