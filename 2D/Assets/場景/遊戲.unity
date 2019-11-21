@@ -427,9 +427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  sayStart: "\u55E8\uFF0C\u7D66\u6211\u8490\u96C6\u5341\u9846\u6AFB\u6843!!!!!"
-  sayNotComplete: "\u4F60\u9084\u6C92\u627E\u5230\u5341\u9846\u6AFB\u6843\u5594..."
-  sayComplete: "\u611F\u8B1D\u4F60\u5E6B\u6211\u627E\u5230\u5341\u9846\u6AFB\u6843~"
+  sayStart: "\u55E8\uFF0C\u627E\u5341\u9846\u6AFB\u6843!!!"
+  sayNotComplete: "\u9084\u6C92\u627E\u5230\u5341\u9846\u6AFB\u6843\u5594!!!"
+  sayComplete: "\u611F\u8B1D!!!"
   speed: 1.5
   complete: 0
   countPlayer: 0

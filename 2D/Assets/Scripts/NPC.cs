@@ -51,8 +51,20 @@ public class Npc : MonoBehaviour
     {
         // 畫布.顯示
         objCanvas.SetActive(true);
-        // 文字介面.文字 = 對話1
-        textSay.text = sayStart;
+
+        // 判斷式(狀態)
+        switch (_state)
+        {
+            case state.normal:
+                textSay.text = sayStart;            // 開始對話
+                break;
+            case state.notComplete:
+                textSay.text = sayNotComplete;      // 未完成對話
+                break;
+            case state.complete:
+                textSay.text = sayComplete;         // 完成對話
+                break;
+        }
     }
 
     /// <summary>
