@@ -63,11 +63,15 @@ public class NPC : MonoBehaviour
         objCanvas.SetActive(true);
         StopAllCoroutines();
 
+        if (countPlayer >= countFinish) _state = state.complete;
+
+
         // 判斷式(狀態)
         switch (_state)
         {
             case state.start:
                 StartCoroutine(ShowDialog(sayStart));           // 開始對話
+                _state = state.notComplete;
                 break;
             case state.notComplete:
                 StartCoroutine(ShowDialog(sayNotComplete));     // 開始對話未完成
@@ -82,10 +86,10 @@ public class NPC : MonoBehaviour
     {
         textSay.text = "";                              // 清空文字
 
-        for (int i = 0; i < say.Length; i++)       // 迴圈跑對話.長度
+        for (int i = 0; i < say.Length; i++)            // 迴圈跑對話.長度
         {
-            textSay.text += say[i].ToString();     // 累加每個文字
-            aud.PlayOneShot(soundSay, 0.6f);
+            textSay.text += say[i].ToString();          // 累加每個文字
+            aud.PlayOneShot(soundSay, 0.6f);            // 播放一次音效(音效片段，音量)
             yield return new WaitForSeconds(speed);     // 等待
         }
     }
@@ -95,6 +99,7 @@ public class NPC : MonoBehaviour
     /// </summary>
     private void SayClose()
     {
+        StopAllCoroutines();
         objCanvas.SetActive(false);
     }
 }
