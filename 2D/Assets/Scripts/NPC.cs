@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;   // 引用 介面 API
+using UnityEngine.UI;       // 引用 介面 API
 using System.Collections;
 
 public class NPC : MonoBehaviour
@@ -20,8 +20,9 @@ public class NPC : MonoBehaviour
     public string sayStart = "嗨!!!我要蒐集十顆櫻桃!!!";
     public string sayNotComplete = "還沒找到十顆櫻桃嗎!!!";
     public string sayComplete = "感謝找到櫻桃!!!";
-    [Header("對話速度")]
+    [Range(0.1f, 1.5f)]
     public float speed = 1.5f;
+    public AudioClip soundSay;
     [Header("任務相關")]
     public bool complete;
     public int countPlayer;
@@ -29,11 +30,9 @@ public class NPC : MonoBehaviour
     [Header("介面")]
     public GameObject objCanvas;
     public Text textSay;
-    #endregion
-
-    public AudioClip soundSay;
 
     private AudioSource aud;
+    #endregion
 
     private void Start()
     {
@@ -101,5 +100,13 @@ public class NPC : MonoBehaviour
     {
         StopAllCoroutines();
         objCanvas.SetActive(false);
+    }
+
+    /// <summary>
+    /// 玩家取得道具
+    /// </summary>
+    public void PlayerGet()
+    {
+        countPlayer++;
     }
 }
