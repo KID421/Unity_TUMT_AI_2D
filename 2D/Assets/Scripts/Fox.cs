@@ -39,7 +39,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isGround = true;
-        Debug.Log("碰到東西：" + collision.gameObject);
+        //Debug.Log("碰到東西：" + collision.gameObject);
     }
 
     /// <summary>
