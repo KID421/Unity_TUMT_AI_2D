@@ -2,7 +2,7 @@
 using UnityEngine.UI;   // 引用 介面 API
 using System.Collections;
 
-public class Npc : MonoBehaviour
+public class NPC : MonoBehaviour
 {
     #region 欄位
     // 定義列舉
@@ -57,7 +57,7 @@ public class Npc : MonoBehaviour
         switch (_state)
         {
             case state.normal:
-                textSay.text = sayStart;            // 開始對話
+                StartCoroutine(ShowDialog());       // 開始對話
                 break;
             case state.notComplete:
                 textSay.text = sayNotComplete;      // 未完成對話
@@ -65,6 +65,17 @@ public class Npc : MonoBehaviour
             case state.complete:
                 textSay.text = sayComplete;         // 完成對話
                 break;
+        }
+    }
+
+    private IEnumerator ShowDialog()
+    {
+        textSay.text = "";                              // 清空文字
+
+        for (int i = 0; i < sayStart.Length; i++)       // 迴圈跑對話.長度
+        {
+            textSay.text += sayStart[i].ToString();     // 累加每個文字
+            yield return new WaitForSeconds(speed);     // 等待
         }
     }
 

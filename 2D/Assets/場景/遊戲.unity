@@ -329,8 +329,8 @@ GameObject:
   - component: {fileID: 625815873}
   - component: {fileID: 625815872}
   - component: {fileID: 625815871}
-  - component: {fileID: 625815874}
   - component: {fileID: 625815875}
+  - component: {fileID: 625815874}
   m_Layer: 0
   m_Name: "\u9752\u86D9"
   m_TagString: Untagged
@@ -427,10 +427,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  sayStart: "\u55E8\uFF0C\u627E\u5341\u9846\u6AFB\u6843!!!"
-  sayNotComplete: "\u9084\u6C92\u627E\u5230\u5341\u9846\u6AFB\u6843\u5594!!!"
-  sayComplete: "\u611F\u8B1D!!!"
-  speed: 1.5
+  sayStart: "\u55E8\uFF0C\u4F60\u597D\uFF0C\u6211\u53EF\u4EE5\u8ACB\u4F60\u5E6B\u6211\u8490\u96C6\u5341\u9846\u6AFB\u6843\u55CE\uFF1F"
+  sayNotComplete: "\u4F60\u9084\u6C92\u627E\u5230\u5341\u9846\u6AFB\u6843\u5594..."
+  sayComplete: "\u611F\u8B1D\u4F60\u5E6B\u6211\u627E\u5230\u5341\u9846\u6AFB\u6843~"
+  speed: 0.1
   complete: 0
   countPlayer: 0
   countFinish: 10
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974707410}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c72b5685856eef744be1cc7ed695f681, type: 3}
   m_Name: 
@@ -1128,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1262997413
 Animator:
   serializedVersion: 3
