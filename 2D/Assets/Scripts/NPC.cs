@@ -34,6 +34,7 @@ public class NPC : MonoBehaviour
     private AudioSource aud;
     #endregion
 
+    #region 事件
     private void Start()
     {
         aud = GetComponent<AudioSource>();
@@ -52,7 +53,9 @@ public class NPC : MonoBehaviour
         if (collision.name == "狐狸")
             SayClose();
     }
+    #endregion
 
+    #region 方法
     /// <summary>
     /// 對話：打字效果
     /// </summary>
@@ -109,4 +112,5 @@ public class NPC : MonoBehaviour
     {
         countPlayer++;
     }
+    #endregion
 }

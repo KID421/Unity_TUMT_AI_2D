@@ -3,6 +3,7 @@ using UnityEngine.Events;           // 引用 事件 API
 
 public class Fox : MonoBehaviour    // 類別 類別名稱
 {
+    #region 欄位
     // 成員：欄位、屬性、方法、事件
     // 修飾詞 類型 名稱 指定 值；
     public int speed = 50;                  // 整數
@@ -12,17 +13,22 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     public bool isGround;
 
     public UnityEvent onEat;
+    public AudioClip soundProp;
 
     //private Transform tra;
     private Rigidbody2D r2d;
+    private AudioSource aud;
+    #endregion
 
+    #region 事件
     // 事件：在特定時間點會以指定頻率執行的方法
     // 開始事件：遊戲開始時執行一次
     private void Start()
     {
         // 泛型 <T>
-        r2d = GetComponent<Rigidbody2D>();
         //tra = GetComponent<Transform>();
+        r2d = GetComponent<Rigidbody2D>();
+        aud = GetComponent<AudioSource>();
     }
 
     // 更新事件：每秒執行約 60 次
@@ -49,11 +55,14 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     {
         if (collision.tag == "櫻桃")
         {
+            aud.PlayOneShot(soundProp, 1.2f);
             Destroy(collision.gameObject);  // 刪除
             onEat.Invoke();                 // 呼叫事件
         }
     }
+    #endregion
 
+    #region 方法
     /// <summary>
     /// 走路
     /// </summary>
@@ -85,4 +94,5 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     {
         transform.eulerAngles = new Vector3(0, direction, 0);
     }
+    #endregion
 }
