@@ -19,6 +19,8 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     private Rigidbody2D r2d;
     private AudioSource aud;
     #endregion
+    [Header("血量"), Range(0, 200)]
+    public float hp = 100;
 
     #region 事件
     // 事件：在特定時間點會以指定頻率執行的方法
@@ -84,7 +86,6 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
         }
     }
 
-
     // 參數語法：類型 名稱
     /// <summary>
     /// 轉彎
@@ -93,6 +94,11 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     private void Turn(int direction = 0)
     {
         transform.eulerAngles = new Vector3(0, direction, 0);
+    }
+
+    public void Damage(float damage)
+    {
+        hp -= damage;
     }
     #endregion
 }
