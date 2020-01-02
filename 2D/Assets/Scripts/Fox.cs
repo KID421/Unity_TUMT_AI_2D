@@ -1,26 +1,38 @@
 ﻿using UnityEngine;                  // 引用 Unity API - API 倉庫 功能、工具
 using UnityEngine.Events;           // 引用 事件 API
+using UnityEngine.UI;               // 引用 介面 API
 
 public class Fox : MonoBehaviour    // 類別 類別名稱
 {
     #region 欄位
     // 成員：欄位、屬性、方法、事件
     // 修飾詞 類型 名稱 指定 值；
+    [Header("移動速度"), Range(0, 1000)]
     public int speed = 50;                  // 整數
+    [Header("跳躍高度"), Range(0, 2000)]
     public float jump = 2.5f;               // 浮點數
-    public string foxName = "狐狸";         // 字串
-    public bool pass = false;               // 布林值 - true/false
+    [Header("是否在地板上")]
     public bool isGround;
-
-    public UnityEvent onEat;
+    [Header("血量"), Range(0, 200)]
+    public float hp = 100;
+    [Header("血量吧條")]
+    public Image hpBar;
+    [Header("結束畫面")]
+    public GameObject final;
+    [Header("音效區域")]
     public AudioClip soundProp;
+    [Header("吃東西事件")]
+    public UnityEvent onEat;
+
+    //public string foxName = "狐狸";         // 字串
+    //public bool pass = false;               // 布林值 - true/false
 
     //private Transform tra;
     private Rigidbody2D r2d;
     private AudioSource aud;
+    private Animator ani;
+    private float hpMax;
     #endregion
-    [Header("血量"), Range(0, 200)]
-    public float hp = 100;
 
     #region 事件
     // 事件：在特定時間點會以指定頻率執行的方法
@@ -31,6 +43,9 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
         //tra = GetComponent<Transform>();
         r2d = GetComponent<Rigidbody2D>();
         aud = GetComponent<AudioSource>();
+        ani = GetComponent<Animator>();
+
+        hpMax = hp;
     }
 
     // 更新事件：每秒執行約 60 次
@@ -49,8 +64,11 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isGround = true;
-        //Debug.Log("碰到東西：" + collision.gameObject);
+        if (collision.gameObject.name == "地板")
+        {
+            isGround = true;
+            ani.SetBool("跳躍開關", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,6 +90,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     {
         if (r2d.velocity.magnitude < 10)
             r2d.AddForce(new Vector2(speed * Input.GetAxisRaw("Horizontal"), 0));
+        ani.SetBool("跑步開關", Input.GetAxisRaw("Horizontal") != 0);
     }
 
     /// <summary>
@@ -83,6 +102,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
         {
             isGround = false;
             r2d.AddForce(new Vector2(0, jump));
+            ani.SetBool("跳躍開關", true);
         }
     }
 
@@ -99,6 +119,9 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     public void Damage(float damage)
     {
         hp -= damage;
+        hpBar.fillAmount = hp / hpMax;
+
+        if (hp <= 0) final.SetActive(true);
     }
     #endregion
 }

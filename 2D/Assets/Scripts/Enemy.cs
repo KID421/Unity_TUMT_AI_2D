@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "狐狸")
+        if (collision.gameObject.name == "狐狸" && collision.transform.position.y < transform.position.y + 1)
         {
             collision.gameObject.GetComponent<Fox>().Damage(damage);
         }
