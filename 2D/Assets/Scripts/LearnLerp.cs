@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using KID;
 
 public class LearnLerp : MonoBehaviour
 {
@@ -13,11 +14,20 @@ public class LearnLerp : MonoBehaviour
     public Color blue = Color.blue;
     public Color myColor;
 
+    public Transform cubeA, cubeB;
+
+    public float speed = 3;
+
     private void Start()
     {
         print(Mathf.Lerp(0, 10, 0.7f));
         print(Vector2.Lerp(a, b, 0.7f));
 
         myColor = Color.Lerp(red, blue, 0.5f);
+    }
+
+    private void Update()
+    {
+        cubeA.position = Vector3.Lerp(cubeA.position, cubeB.position, 0.3f * Time.deltaTime * speed);
     }
 }
