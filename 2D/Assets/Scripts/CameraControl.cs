@@ -20,8 +20,8 @@ namespace KID
             Vector3 cam = transform.position;
             Vector3 tar = target.position;
             tar.z = -10;
+            tar.y = Mathf.Clamp(tar.y, -1, 1);  // 數學.夾住(值，最小，最大)
             transform.position = Vector3.Lerp(cam, tar, 0.3f * Time.deltaTime * speed);
         }
     }
 }
-

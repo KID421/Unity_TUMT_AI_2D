@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour
     public string sayStart = "嗨!!!我要蒐集十顆櫻桃!!!";
     public string sayNotComplete = "還沒找到十顆櫻桃嗎!!!";
     public string sayComplete = "感謝找到櫻桃!!!";
-    [Range(0.1f, 1.5f)]
+    [Range(0.001f, 1.5f)]
     public float speed = 1.5f;
     public AudioClip soundSay;
     [Header("任務相關")]

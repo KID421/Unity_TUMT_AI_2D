@@ -11,8 +11,6 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     public int speed = 50;                  // 整數
     [Header("跳躍高度"), Range(0, 2000)]
     public float jump = 2.5f;               // 浮點數
-    [Header("是否在地板上")]
-    public bool isGround;
     [Header("血量"), Range(0, 200)]
     public float hp = 100;
     [Header("血量吧條")]
@@ -32,6 +30,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
     private AudioSource aud;
     private Animator ani;
     private float hpMax;
+    private bool isGround;
     #endregion
 
     #region 事件
@@ -64,7 +63,7 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "地板")
+        if (collision.gameObject.name == "地板" || collision.gameObject.tag == "老鼠")
         {
             isGround = true;
             ani.SetBool("跳躍開關", false);
@@ -79,6 +78,8 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
             Destroy(collision.gameObject);  // 刪除
             onEat.Invoke();                 // 呼叫事件
         }
+
+        if (collision.name == "死亡區域") Dead();
     }
     #endregion
 
@@ -121,7 +122,12 @@ public class Fox : MonoBehaviour    // 類別 類別名稱
         hp -= damage;
         hpBar.fillAmount = hp / hpMax;
 
-        if (hp <= 0) final.SetActive(true);
+        if (hp <= 0) Dead();
+    }
+
+    private void Dead()
+    {
+        final.SetActive(true);
     }
     #endregion
 }
